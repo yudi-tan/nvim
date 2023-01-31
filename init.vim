@@ -36,6 +36,7 @@ Plug 'skywind3000/vim-cppman'
 Plug 'brentyi/isort.vim'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'ruanyl/vim-gh-line'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
