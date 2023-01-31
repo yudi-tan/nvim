@@ -1,7 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
-# NOTE: Change this to point to your local python instance.
-let g:python3_host_prog = $CONDA_ENV_PATH . '/bin/python'
+" NOTE: Change this to point to your local python instance.
+let g:python3_host_prog = '$CONDA_ENV_PATH/bin/python'
 
 "Plugins
 Plug 'tpope/vim-sensible'
