@@ -58,7 +58,8 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 " GoTo code navigation
-nmap <leader>gs :call CocAction('jumpDefinition', 'vsplit')<CR>
+" In coc-settings.json i'd set the default to open the jumped-to file
+" in a new pane instead of overriding current buffer.
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gy <Plug>(coc-type-definition)
 nmap <leader>gi <Plug>(coc-implementation)
