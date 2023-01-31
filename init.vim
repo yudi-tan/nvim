@@ -37,6 +37,7 @@ Plug 'brentyi/isort.vim'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'ruanyl/vim-gh-line'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
 call plug#end()
 
