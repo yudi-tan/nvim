@@ -46,7 +46,7 @@ call plug#end()
 let mapleader = " "
 
 "NerdTree remap
-nmap <F1> :NERDTreeToggle<CR>
+nmap <F1> :NERDTreeToggle %<CR>
 
 "Numbers.vim
 nnoremap <F2> :NumbersToggle<CR>
@@ -79,7 +79,7 @@ function! SplitIfNotOpen(...)
     " Execute the cursor movement command
     exe call
 endfunction
-
+"
 command! -nargs=+ CocSplitIfNotOpen :call SplitIfNotOpen(<f-args>)
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gy <Plug>(coc-type-definition)
@@ -90,17 +90,21 @@ nmap <leader>gr <Plug>(coc-references)
 map q: <Nop>
 nnoremap Q <nop>
 
-" use <tab> for trigger completion and navigate to the next complete item
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-inoremap <silent><expr> <C-x><C-z> coc#pum#visible() ? coc#pum#stop() : "\<C-x>\<C-z>"
-" remap for complete to use tab and <cr>
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
 inoremap <silent><expr> <TAB>
-    \ coc#pum#visible() ? coc#pum#next(1):
-    \ <SID>check_back_space() ? "\<Tab>" :
-    \ coc#refresh()
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-inoremap <silent><expr> <c-space> coc#refresh()
 
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 "Custom functions to trim white space
 fun! TrimWhiteSpace()
