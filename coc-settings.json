@@ -1,5 +1,0 @@
-{
-    "python.formatting.provider": "black",
-    "coc.preferences.jumpCommand": "vsplit",
-    "coc.preferences.jumpCommand": "CocSplitIfNotOpen"
-}

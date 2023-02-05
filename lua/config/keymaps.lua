@@ -1,6 +1,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- https://github.com/ruanyl/vim-gh-line
+vim.g.gh_line_blame_map_default = 0
+vim.g.gh_repo_map = "<leader>gz"
+
 -- Shorten function name
 local keymap = vim.keymap.set
 
@@ -27,7 +31,7 @@ keymap({ "n", "i" }, "<C-k>", "<C-w>k", { silent = true, desc = "Go to upper win
 keymap({ "n", "i" }, "<C-l>", "<C-w>l", { silent = true, desc = "Go to right window" })
 
 -- Toggle visibility of nvim tree
-keymap("n", "<F1>", "<cmd>NvimTreeToggle<CR>", { silent = true, desc = "toggle neovim tree" })
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { silent = true, desc = "toggle neovim tree" })
 
 -- Resize
 keymap("n", "<C-Up>", ":resize +2<CR>", { silent = true, desc = "Increase window height" })
@@ -49,9 +53,6 @@ keymap("n", "'", "`", { silent = true })
 -- Repeat and macro
 keymap("n", "`", "@a", { silent = true })
 
--- Find text in file
-keymap("n", "<C-s>", "<cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_dropdown({}))<CR>", { silent = true, desc = "search" })
-
 -- Copy and paste
 keymap("n", "<C-y>", "<esc>:%y+<CR>", { silent = true });
 
@@ -70,8 +71,11 @@ keymap("n", "<leader>a", "<cmd>Alpha<CR>", { desc = "Show Alpha" })
 keymap("n", "<leader>bb", "<cmd>lua require('telescope.builtin').buffers()<CR>", { desc = "Switch Buffers" })
 keymap("n", "<leader>bd", "<cmd>Bdelete!<CR>", { desc = "Delete current buffer" })
 
--- find
-keymap("n", "<leader>fC", "<cmd>Telescope commands<CR>", { desc = "Commands" })
+-- Telescope
+keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_dropdown({}))<CR>", { silent = true, desc = "search" })
+keymap("n", "<C-p>",
+  [[<cmd>lua require('telescope.builtin').git_files()<CR>]],
+  { desc = "Find files" })
 keymap("n", "<leader>ff",
   [[<cmd>lua require('telescope.builtin').find_files()<CR>]],
   { desc = "Find files" })
@@ -97,7 +101,7 @@ keymap("n", "<leader>go", "<cmd>Telescope git_status<CR>", { desc = "Open change
 keymap("n", "<leader>gb", "<cmd>Telescope git_branches<CR>", { desc = "Checkout branch" })
 keymap("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "Checkout commit" })
 keymap("n", "<leader>gd",
-  "<cmd>lua require('user.utils.diff')()<CR>",
+  "<cmd>lua require('utils.diff')()<CR>",
   { desc = "Diff With" }
 )
 
