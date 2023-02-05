@@ -40,8 +40,8 @@ keymap("n", "<C-Left>", ":vertical :resize -2<CR>", { silent = true, desc = "Dec
 keymap("n", "<C-Right>", ":vertical :resize +2<CR>", { silent = true, desc = "Increase window width" })
 
 -- Buffers navigate
-keymap("n", "<Tab>", ":bn<CR>", { silent = true, desc = "next tab" })
-keymap("n", "<S-Tab>", ":bp<CR>", { silent = true, desc = "prev tab" })
+keymap("n", "<S-l>", "<cmd>BufferLineCycleNext<CR>")
+keymap("n", "<S-h>", "<cmd>BufferLineCyclePrev<CR>")
 
 -- Split windows
 keymap("n", "vs", ":vs<CR>", { silent = true, desc = "split vertically" })
