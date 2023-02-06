@@ -92,6 +92,21 @@ local function lsp_highlight_document(client, bufnr)
   end
 end
 
+local function lsp_autoformat_on_save(client, bufnr)
+  -- Set autocommands conditional on server_capabilities
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+        group = augroup,
+        buffer = bufnr,
+        callback = function()
+            -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+            vim.lsp.buf.formatting_sync()
+        end,
+    })
+  end
+end
+
 
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
@@ -115,6 +130,7 @@ end
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client, bufnr)
+  lsp_autoformat_on_save(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
