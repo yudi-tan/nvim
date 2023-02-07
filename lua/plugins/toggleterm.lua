@@ -29,7 +29,10 @@ return {
 
     -- Custom terminals
     local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
-    local zip_terminal = Terminal:new({  hidden = true, close_on_exit = false, dir="~/Work/evergreen/website" })
+    local zip_terminal = Terminal:new({  hidden = true, on_open=function(term)
+      vim.api.nvim_command("TermExec cmd='conda activate website'")
+    end
+    })
 
     function _LAZYGIT_TOGGLE()
       lazygit:toggle()
