@@ -81,6 +81,9 @@ keymap("n", "<leader>ff",
   { desc = "Find files" })
 keymap("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "Keymaps" })
 
+-- Terminal
+keymap("n", "<C-t>", "<cmd>lua _ZIP_TERMINAL_TOGGLE()<CR>", { desc = "Zip Terminal" })
+
 -- git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", { desc = "Lazygit" })
 keymap("n", "<leader>gf", "<cmd>0Gclog<CR>", { desc = "File history" })

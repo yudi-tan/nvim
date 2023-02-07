@@ -5,7 +5,6 @@ return {
 
     toggleterm.setup({
       size = 20,
-      open_mapping = [[<c-t>]],
       hide_numbers = true,
       shade_filetypes = {},
       shade_terminals = true,
@@ -27,34 +26,18 @@ return {
     })
 
     local Terminal = require("toggleterm.terminal").Terminal
+
+    -- Custom terminals
     local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+    local zip_terminal = Terminal:new({  hidden = true, close_on_exit = false, dir="~/Work/evergreen/website" })
 
     function _LAZYGIT_TOGGLE()
       lazygit:toggle()
     end
 
-    local node = Terminal:new({ cmd = "node", hidden = true })
-
-    function _NODE_TOGGLE()
-      node:toggle()
+    function _ZIP_TERMINAL_TOGGLE()
+      zip_terminal:toggle()
     end
 
-    local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
-
-    function _NCDU_TOGGLE()
-      ncdu:toggle()
-    end
-
-    local htop = Terminal:new({ cmd = "htop", hidden = true })
-
-    function _HTOP_TOGGLE()
-      htop:toggle()
-    end
-
-    local python = Terminal:new({ cmd = "python", hidden = true })
-
-    function _PYTHON_TOGGLE()
-      python:toggle()
-    end
   end
 }
