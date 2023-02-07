@@ -38,9 +38,7 @@ return {
         custom = {},
       },
       git = {
-        enable = true,
-        ignore = false,
-        timeout = 500,
+        enable = false,
       },
       view = {
         width = 30,
