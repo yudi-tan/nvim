@@ -109,11 +109,14 @@ end
 
 
 local function lsp_keymaps(bufnr)
-  local opts = { noremap = true, silent = true }
+  local opts = { noremap = true, silent = true,}
 
   -- Declaration and definition
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua require('telescope.builtin').lsp_definitions({jump_type='vsplit'})<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "hd", "<cmd>lua require('telescope.builtin').lsp_definitions({jump_type='split'})<CR>", opts)
+  -- TODO(yudi): Go back to telescope version once i figure out how to prevent it from opening [No Name] buffers after splitting window.
+  --vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>Telescope lsp_definitions jump_type=vsplit<CR>", opts)
+  --vim.api.nvim_buf_set_keymap(bufnr, "n", "hd", "<cmd>Telescope lsp_definitions jump_type=split<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":vsplit | lua vim.lsp.buf.definition()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "hd", ":split | lua vim.lsp.buf.definition()<CR>", opts)
 
   -- Docs
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
