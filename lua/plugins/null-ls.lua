@@ -29,7 +29,6 @@ return {
         formatting.prettier,
         formatting.black.with({ extra_args = { "--fast" } }),
         formatting.isort,
-        diagnostics.flake8,
         diagnostics.jsonlint,
         code_actions.gitsigns,
       },
