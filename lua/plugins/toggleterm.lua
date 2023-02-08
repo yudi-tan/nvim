@@ -5,10 +5,6 @@ return {
 
     toggleterm.setup({
       size = 20,
-      open_mapping = [[<c-t>]],
-      on_create = function(term)
-        vim.api.nvim_command("TermExec cmd='conda activate website'")
-      end,
       hide_numbers = true,
       shade_filetypes = {},
       shade_terminals = true,
@@ -33,9 +29,20 @@ return {
 
     -- Custom terminals
     local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+    local zipterm = Terminal:new({ 
+      count = 2424, 
+      hidden = true, 
+      on_create = function(term)
+        vim.api.nvim_command("2424TermExec cmd='conda activate website'")
+    end
+    })
 
     function _LAZYGIT_TOGGLE()
       lazygit:toggle()
+    end
+
+    function _ZIPTERM_TOGGLE()
+      zipterm:toggle()
     end
 
   end

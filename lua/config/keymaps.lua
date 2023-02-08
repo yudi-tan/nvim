@@ -82,6 +82,8 @@ keymap("n", "<leader>ff",
 keymap("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "Keymaps" })
 
 -- git
+keymap("n", "<C-t>", "<cmd>lua _ZIPTERM_TOGGLE()<CR>", { desc = "Zip Terminal" })
+keymap("t", "<C-t>", "<cmd>lua _ZIPTERM_TOGGLE()<CR>", { desc = "Zip Terminal" })
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", { desc = "Lazygit" })
 keymap("n", "<leader>gf", "<cmd>0Gclog<CR>", { desc = "File history" })
 keymap("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<CR>", { desc = "Next Hunk" })
