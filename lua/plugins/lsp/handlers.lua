@@ -92,6 +92,12 @@ local function lsp_highlight_document(client, bufnr)
   end
 end
 
+local function lsp_formatting(bufnr)
+      vim.lsp.buf.format({
+        bufnr = bufnr,
+    })
+end
+
 local function lsp_autoformat_on_save(client, bufnr)
   -- Set autocommands conditional on server_capabilities
   if client.supports_method("textDocument/formatting") then
@@ -100,8 +106,7 @@ local function lsp_autoformat_on_save(client, bufnr)
         group = augroup,
         buffer = bufnr,
         callback = function()
-            -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-            vim.lsp.buf.formatting_sync()
+          lsp_formatting(bufnr)
         end,
     })
   end
