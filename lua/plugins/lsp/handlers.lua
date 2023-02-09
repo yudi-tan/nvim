@@ -121,7 +121,7 @@ local function lsp_keymaps(bufnr)
   --vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>Telescope lsp_definitions jump_type=vsplit<CR>", opts)
   --vim.api.nvim_buf_set_keymap(bufnr, "n", "hd", "<cmd>Telescope lsp_definitions jump_type=split<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":vsplit | lua vim.lsp.buf.definition()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "hd", ":split | lua vim.lsp.buf.definition()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "td", ":split | lua vim.lsp.buf.definition()<CR>", opts)
 
   -- Docs
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
