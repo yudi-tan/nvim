@@ -32,9 +32,9 @@ return {
     local zipterm = Terminal:new({ 
       count = 2424, 
       hidden = true, 
-      on_create = function(term)
-        vim.api.nvim_command("2424TermExec cmd='conda activate website'")
-    end
+      -- on_create = function(term)
+      --   vim.api.nvim_command("2424TermExec cmd='conda activate website'")
+      -- end
     })
 
     function _LAZYGIT_TOGGLE()
