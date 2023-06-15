@@ -124,7 +124,7 @@ keymap("n", "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<CR>", { de
 keymap("n", "<leader>s", "<cmd>SymbolsOutline<CR>", { desc = "Show Symbols Outline Tree" })
 
 -- minimap
-keymap("n", "<leader>m", "<cmd>Minimap<CR>", { desc = "Show Minimap" })
+keymap("n", "<leader>m", "<cmd>MinimapToggle<CR>", { desc = "Show Minimap" })
 
 
 ---------------------------------- Insert Mode --------------------------
