@@ -133,6 +133,7 @@ local function lsp_keymaps(bufnr)
   -- Diagnostic
   vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>d", "<cmd>lua Telescope diagnostics<CR>", opts)
 end
 
 M.on_attach = function(client, bufnr)
