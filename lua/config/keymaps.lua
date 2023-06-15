@@ -120,6 +120,9 @@ keymap("n", "<leader>tf", "<cmd>ToggleTerm direction=float<CR>", { desc = "Float
 keymap("n", "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<CR>", { desc = "Horizontal" })
 keymap("n", "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<CR>", { desc = "Vertical" })
 
+-- symbols
+keymap("n", "<leader>s", "<cmd>SymbolsOutline<CR>", { desc = "Show Symbols Outline Tree" })
+
 
 ---------------------------------- Insert Mode --------------------------
 -- Rename
