@@ -5,7 +5,7 @@ return {
 
     lsp_lines.setup()
 
-    vim.keymap.set("n", "g?", function()
+    vim.keymap.set("n", "<leader>l", function()
       local lines_enabled = not vim.diagnostic.config().virtual_lines
       vim.diagnostic.config(
         {
@@ -16,8 +16,8 @@ return {
     end, { noremap = true, silent = true })
 
     vim.diagnostic.config({
-      virtual_text = true,
-      virtual_lines = false
+      virtual_text = false,
+      virtual_lines = true
     })
   end
 }
