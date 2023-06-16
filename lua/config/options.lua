@@ -63,8 +63,3 @@ if vim.fn.has("nvim-0.9") == 1 and not vim.opt.diff:get() then
 elseif vim.fn.has("nvim-0.9") == 0 then
   vim.opt.signcolumn = "number"
 end
-
-if vim.fn.has("nvim-0.9.0") == 1 then
-  vim.opt.splitkeep = "screen"
-  vim.opt.shortmess = "filnxtToOFWIcC"
-end
