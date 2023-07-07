@@ -80,6 +80,7 @@ keymap("n", "<leader>ff",
   [[<cmd>lua require('telescope.builtin').find_files()<CR>]],
   { desc = "Find files" })
 keymap("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "Keymaps" })
+keymap("n", "<leader>r", "<cmd>Telescope resume<CR>", { desc = "Keymaps" })
 
 -- git
 keymap("n", "<C-t>", "<cmd>lua _ZIPTERM_TOGGLE()<CR>", { desc = "Zip Terminal" })
