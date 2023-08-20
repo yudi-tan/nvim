@@ -8,7 +8,6 @@ return {
       "help",
       "startify",
       "aerial",
-      "alpha",
       "dashboard",
       "packer",
       "neogitstatus",

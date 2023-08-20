@@ -64,9 +64,6 @@ keymap("n", "N", "Nzzzv", { silent = true })
 keymap("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
 keymap("n", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
--- Alpha
-keymap("n", "<leader>a", "<cmd>Alpha<CR>", { desc = "Show Alpha" })
-
 -- buffers
 keymap("n", "<leader>bb", "<cmd>lua require('telescope.builtin').buffers()<CR>", { desc = "Switch Buffers" })
 keymap("n", "<leader>bd", "<cmd>Bdelete!<CR>", { desc = "Delete current buffer" })
@@ -123,9 +120,6 @@ keymap("n", "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<CR>", { de
 
 -- symbols
 keymap("n", "<leader>s", "<cmd>SymbolsOutline<CR>", { desc = "Show Symbols Outline Tree" })
-
--- minimap
-keymap("n", "<leader>m", "<cmd>MinimapToggle<CR>", { desc = "Show Minimap" })
 
 
 ---------------------------------- Insert Mode --------------------------
