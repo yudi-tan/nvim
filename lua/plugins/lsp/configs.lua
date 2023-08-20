@@ -11,3 +11,12 @@ for _, server in ipairs(lsp_servers.regular_servers) do
     capabilities = capabilities,
   })
 end
+
+
+-- Rust is special -- we are using rust-tools instead which requires a special setup (capabilities is not supported).
+local rt = require("rust-tools")
+rt.setup({
+  server = {
+    on_attach = on_attach,
+  }
+})

@@ -6,4 +6,5 @@ return {
   "nvim-tree/nvim-web-devicons", -- Icons
   "ap/vim-css-color", -- Vim css color
   "ruanyl/vim-gh-line", -- Opening file in github.
+  "simrat39/rust-tools.nvim", -- Rust LSP
 }
