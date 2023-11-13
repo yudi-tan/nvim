@@ -27,7 +27,6 @@ return {
       end,
       sources = {
         formatting.prettier,
-        formatting.black.with({ extra_args = { "--fast" } }),
         formatting.ruff,
         diagnostics.jsonlint,
         code_actions.gitsigns,
