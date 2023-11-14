@@ -95,6 +95,7 @@ end
 local function lsp_formatting(bufnr)
       vim.lsp.buf.format({
         bufnr = bufnr,
+        async = false,
     })
 end
 
