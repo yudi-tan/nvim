@@ -26,7 +26,7 @@ return {
         end
       end,
       sources = {
-        formatting.prettier,
+        formatting.prettierd,
         formatting.ruff,
         diagnostics.jsonlint,
         code_actions.gitsigns,
